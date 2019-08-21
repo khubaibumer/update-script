@@ -10,8 +10,8 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color
 
 CMD="lupdate"
-SCRIPT="./.system_update.sh"
-EX_PATH="~/.system_update.sh"
+SCRIPT="$PWD/.system_update.sh"
+EX_PATH="$HOME/.system_update.sh"
 
 check_ret() {
 	if [ $1 -ne 0 ]
@@ -51,7 +51,7 @@ check_ret $?
 sleep 1
 
 echo -e "${CLR} Moving script to: $EX_PATH...${NC}"
-cp $SCRIPT $EX_PATH
+cp -f $SCRIPT $EX_PATH
 check_ret $?
 sleep 1
 
