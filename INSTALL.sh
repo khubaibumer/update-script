@@ -62,6 +62,10 @@ sleep 3
 echo "alias $CMD='sudo $EX_PATH' " >> ~/.bashrc
 check_ret $?
 
+echo -e "${CLR} Adding 'Ctrl-l' as shortcut for 'lupdate'... ${NC}"
+echo "bind '\"\\C-l\"':\"\\\"$CMD \\C-m \\\"\" " >> ~/.bashrc
+check_ret $?
+
 echo -e "${CLR} Restart Terminal to reload bashrc... ${NC}"
 exit 0
 
